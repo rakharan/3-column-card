@@ -1,0 +1,155 @@
+$bright-orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+
+$transparent-white: hsla(0, 0%, 100%, 0.75);
+$very-light-gray: hsl(0, 0%, 95%);
+
+@mixin card {
+    width: 100%;
+    padding: 35px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: $very-light-gray;
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+
+    .card {
+        width: 100%;
+        margin: 50px;
+        display: flex;
+        flex-wrap: wrap;
+
+        .satu {
+            background-color: $bright-orange;
+            border-radius: 5px 5px 0 0;
+
+            .text {
+                button {
+                    color: $bright-orange;
+                }
+            }
+        }
+
+        .dua {
+            background-color: $dark-cyan;
+
+            .text {
+                button {
+                    color: $dark-cyan;
+                }
+            }
+        }
+
+        .tiga {
+            background-color: $very-dark-cyan;
+            border-radius: 0 0 5px 5px;
+
+            .text {
+                button {
+                    color: $very-dark-cyan;
+                }
+            }
+        }
+
+        .content {
+            @include card;
+
+            button {
+                background-color: $very-light-gray;
+                font-family: 'Lexend Deca', sans-serif;
+                border: 1px solid transparent;
+                border-radius: 18px;
+                padding: 10px 30px;
+                cursor: pointer;
+                margin-top: 50px;
+
+                &:hover {
+                    background-color: transparent;
+                    border: 1px solid $very-light-gray;
+                    color: $very-light-gray;
+                }
+            }
+
+            .text {
+                margin-top: 20px;
+                padding: 10px;
+                width: 60%;
+
+                h1 {
+                    font-family: 'Big Shoulders Display', cursive;
+                    color: $very-light-gray;
+
+                    &:hover {
+                        color: darken($very-light-gray, 20%);
+                    }
+                }
+
+                h1,
+                p {
+                    margin-top: 40px;
+                }
+
+                p {
+                    font-family: 'Lexend Deca', sans-serif;
+                    font-size: 15px;
+                    color: $transparent-white;
+                }
+
+
+            }
+        }
+    }
+}
+
+@media (min-width:1025px) {
+
+    .container {
+        min-height: 100vh;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .card {
+            width: 60%;
+            display: flex;
+            flex-wrap: nowrap;
+            ;
+            height: 100%;
+
+            .content {
+                min-height: 100%;
+
+                .text {
+                    width: 100%;
+                }
+            }
+
+            .satu {
+                border-radius: 5px 0 0 5px;
+            }
+
+            .dua {
+                border-radius: 0;
+            }
+
+            .tiga {
+                border-radius: 0 5px 5px 0;
+            }
+        }
+
+    }
+
+}
+
+.attribution {
+    text-align: center;
+}
